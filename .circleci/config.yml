@@ -115,5 +115,7 @@ workflows:
     jobs:
     - build_production_docker:
         filters:
+          branches:
+            ignore: /.*/
           tags:
             only: /^v.*/

@@ -1,0 +1,4 @@
+[submodule "trudesk"]
+	path = trudesk
+	url = https://github.com/polonel/trudesk
+	branch = docker

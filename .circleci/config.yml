@@ -68,9 +68,9 @@ jobs:
         command: |
           wget http://trudesk.io/tools/semver
           chmod +x semver
-          ~/trudesk-docker/semver get major $CIRCLE_TAG >> ~/major
-          ~/trudesk-docker/semver get minor $CIRCLE_TAG >> ~/minor
-          ~/trudesk-docker/semver get patch $CIRCLE_TAG >> ~/patch
+          ~/trudesk-docker/semver get major ${CIRCLE_TAG:1} >> ~/major
+          ~/trudesk-docker/semver get minor ${CIRCLE_TAG:1} >> ~/minor
+          ~/trudesk-docker/semver get patch ${CIRCLE_TAG:1} >> ~/patch
           echo 'export MAJOR=$(cat ~/major)' >> $BASH_ENV
           echo 'export MINOR=$(cat ~/minor)' >> $BASH_ENV
           echo 'export PATCH=$(cat ~/patch)' >> $BASH_ENV
@@ -107,6 +107,8 @@ workflows:
           branches:
             only:
             - master
+          tags:
+            ignore: /^v.*/
     - build_docker_arm:
         filters:
           branches:

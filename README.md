@@ -37,7 +37,8 @@ $ docker run --name trudesk --link mongodb:mongodb \
     -v /data/trudesk/plugins:/usr/src/trudesk/plugins \
     -v /data/trudesk/backups:/usr/src/trudesk/backups \
     -e NODE_ENV=production \
-    -e MONGODB_PORT_27017_TCP_ADDR=mongodb -e MONGODB_DATABASE_NAME=trudesk \
+    -e TRUDESK_DOCKER=true \
+    -e TD_MONGODB_SERVER=mongodb -e TD_MONGODB_DATABASE=trudesk \
     -P -d polonel/trudesk:$TAG
 ```
 

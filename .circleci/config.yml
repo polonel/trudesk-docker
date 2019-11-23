@@ -46,8 +46,7 @@ jobs:
     steps:
     - checkout
     - pullsubmodules
-    - setup_remote_docker:
-        docker_layer_caching: true
+    - setup_remote_docker
     - run:
         name: Build Docker Image
         command: |
@@ -76,8 +75,7 @@ jobs:
           rm -rf ~/trudesk-docker/*
     - checkout
     - pullsubmodules
-    - setup_remote_docker:
-        docker_layer_caching: true
+    - setup_remote_docker
     - run:
         name: Build Docker Image
         command: docker build -t polonel/trudesk:latest trudesk/

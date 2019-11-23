@@ -21,8 +21,7 @@ jobs:
     - image: ubuntu:18.04
     working_directory: ~/trudesk-docker
     steps:
-    - setup_remote_docker:
-        docker_layer_caching: true
+    - setup_remote_docker
     - run:
         name: Install Deps
         command: |

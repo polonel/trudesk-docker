@@ -64,7 +64,7 @@ jobs:
     - run:
         name: Setup Environment Variables
         command: |
-          wget https://https://storage.trudesk.io/tools/semver.sh semver
+          wget -O semver https://https://storage.trudesk.io/tools/semver.sh
           chmod +x semver
           ~/trudesk-docker/semver get major ${CIRCLE_TAG:1} >> ~/major
           ~/trudesk-docker/semver get minor ${CIRCLE_TAG:1} >> ~/minor

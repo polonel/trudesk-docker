@@ -15,20 +15,20 @@ $ mkdir -p /data/trudesk/uploads
 ```
 
 #### MongoDB Container
-The following command will deploy a `mongodb 4.4` docker container with the name `mongodb`, which we will use to link to our `trudesk` container.
+The following command will deploy a `mongodb 5` docker container with the name `mongodb`, which we will use to link to our `trudesk` container.
 ``` bash
 $ docker run --name mongodb \
     -v /data/db:/data/db \
     -v /data/configdb:/data/configdb \
-    -d mongo:4.4.8
+    -d mongo:5.0
 ```
 
 #### Trudesk Container
-The following command will deploy a `trudesk 1.1` docker container. The container will expose a `NodePort` to access the container.
+The following command will deploy a `trudesk 1.2` docker container. The container will expose a `NodePort` to access the container.
 
-Get latest updated image of `1.1`
+Get latest updated image of `1.2`
 ``` bash
-$ docker pull polonel/trudesk:1.1
+$ docker pull polonel/trudesk:1.2
 ```
 
 ``` bash
@@ -50,6 +50,6 @@ the NodePort - __32772__. This will allow access to the trudesk container via `h
 ``` bash
 $ docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                     NAMES
-5f75716aa8cc        polonel/trudesk:1.1 "/bin/bash /usr/src/…"   1 minute ago        Up 1 minute         0.0.0.0:32772->8118/tcp   trudesk
-5b4f77cbf1a3        mongo:4.4.8         "docker-entrypoint.s…"   32 minutes ago      Up 32 minutes       27017/tcp                 mongodb
+5f75716aa8cc        polonel/trudesk:1.2 "/bin/bash /usr/src/…"   1 minute ago        Up 1 minute         0.0.0.0:32772->8118/tcp   trudesk
+5b4f77cbf1a3        mongo:5.0           "docker-entrypoint.s…"   32 minutes ago      Up 32 minutes       27017/tcp                 mongodb
 ```

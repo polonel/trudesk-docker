@@ -1,4 +1,4 @@
-![](http://trudesk.io/TD_Black500.png)
+![](https://docs.trudesk.io/TD_Black500.png)
 ***
 ## Docker Install
 The below example shows running a `MongoDB` container and linking it to a trudesk container.

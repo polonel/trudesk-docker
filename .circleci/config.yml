@@ -3,7 +3,7 @@ version: 2.1
 executors:
   docker-executor:
     docker:
-    - image: circleci/node:10-stretch
+    - image: circleci/node:16-stretch
     working_directory: ~/trudesk-docker
 
 commands:

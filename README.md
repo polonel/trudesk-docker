@@ -45,7 +45,7 @@ $ docker run --name trudesk --link mongodb:mongodb \
 #### Accessing the trudesk container
 Once the containers are running, access the trudesk container via the assigned `NodePort`.
 The following command will list the two running containers. Notice under the ports column 
-the NodePort - __32772__. This will allow access to the trudesk container via `http://{hostip}:32772`
+the NodePort - __32772__. This will allow access to the trudesk container via `http://{hostip}:55000`
 
 ``` bash
 $ docker ps
